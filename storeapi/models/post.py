@@ -1,9 +1,7 @@
-from pydantic import BaseModel  # to validate a data
-
+from pydantic import BaseModel
 
 class UserPostIn(BaseModel):
     body: str
-
 
 class UserPost(UserPostIn):
     id: int
@@ -13,8 +11,9 @@ class CommentIn(BaseModel):
     post_id: int
 
 class Comment(CommentIn):
-    id: int 
+    id: int
 
 class UserPostWithComments(BaseModel):
     post: UserPost
     comments: list[Comment]
+    
